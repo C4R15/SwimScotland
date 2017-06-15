@@ -1,4 +1,4 @@
-var hbs = require('hbs');
+var hbs = require('express-hbs');
 var http = require('http');
 var express = require('express');
 var path = require('path');
@@ -20,11 +20,18 @@ app.set('view engine', 'hbs');
 app.set('port', port);
 
 app.use(logger('dev'));
-hbs.registerPartials(__dirname + '/views/partials');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/public', express.static(__dirname + '/public'));
+
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'hbs')
+app.engine('hbs', hbs.express4({
+  defaultLayout: path.join(__dirname, '/views/layout.hbs'),
+  partialsDir: path.join(__dirname, '/views/partials')
+})
+)
 
 app.use('/', index);
 
