@@ -1,2 +1,2 @@
 # SwimScotland
-###### Redesign of swimscotland.com
+###### Redesign of <http://www.swimscotland.co.uk>
