@@ -7,6 +7,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 
 var index = require('./routes/index');
+var meets = require('./routes/meets');
+var records = require('./routes/records');
+var results = require('./routes/results');
+var affiliates = require('./routes/affiliates');
+var clubWebsites = require('./routes/clubWebsites');
 
 var app = express();
 
@@ -33,6 +38,11 @@ app.engine('hbs', hbs.express4({
 }));
 
 app.use('/', index);
+app.use('/meets', meets);
+app.use('/records', records);
+app.use('/results', results);
+app.use('/affiliates', affiliates);
+app.use('/club-websites', clubWebsites);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

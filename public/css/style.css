@@ -6,13 +6,13 @@ div.body-cont {
     margin-top: 20px;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 993px) {
     div.tab-cont {
         height: calc(100vh - 400px);
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
     div.tab-cont {
         height: calc(100vh - 255px);
     }
@@ -54,9 +54,54 @@ h5 {
     font-size: 1.2em !important;
 }
 
+/*a.results-yr {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    padding: 3px;
+    margin-top: 35px;
+}
+
+a.results-yr:hover {
+    background-color: #189ed7;
+    color: #fff !important;
+}*/
+
+div.yr-cont {
+    white-space: nowrap;
+    overflow-x: auto;
+    width: calc(100% - 100px);
+    height: 50px;
+    float: right;
+}
+
 
 /* Colouring */
 
 .tabs .indicator {
-    background-color: #167ea6 !important;
+    background-color: #189ed7 !important;
+}
+
+span#results {
+  position: absolute;
+  padding-top: 10px;
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar-track {
+    background-color: #c6e0ff;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #5699f2;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
 }
